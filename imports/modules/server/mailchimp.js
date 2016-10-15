@@ -3,7 +3,7 @@ import { HTTP } from 'meteor/http'
 
 class MailChimpAPI {
   constructor() {
-    const { apiKey } = Meteor.settings.private.MailChimp
+    const { apiKey } = Meteor.settings.private.mailChimp
     this.apiKey = apiKey
     this.methods = {
       lists: {
@@ -17,7 +17,7 @@ class MailChimpAPI {
     const payload = { auth: `mailchimp:${this.apiKey}` }
     if (type === 'GET') {
       payload.params = options || {}
-    } else { 
+    } else {
       payload.data = options || {}
     }
     return payload

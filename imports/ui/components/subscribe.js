@@ -6,10 +6,10 @@ import { Bert } from 'meteor/themeteorchef:bert'
 const handleSubscribe = (event) => {
   event.preventDefault()
   Meteor.call('subscribeToMailingList', {
-    emailAddress: document.querySelector('[name="emailAddress"]'),
+    emailAddress: document.querySelector('[name="emailAddress"]').value,
     name: {
-      first: document.querySelector('[name="firstName"]'),
-      last: document.querySelector('[name="lastName"]'),
+      first: document.querySelector('[name="firstName"]').value,
+      last: document.querySelector('[name="lastName"]').value,
     },
   }, (error) => {
     if (error) {
